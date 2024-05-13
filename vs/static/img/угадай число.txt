@@ -1,0 +1,70 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    system("chcp 1251>nul");
+    cout << "###############################\n" << "##### Игра 'Угадай число' #####\n" << "###############################\n";
+
+    returning:
+    cout << "Выберите уровень сложности:\n" << "1 -- Числа от 1 до 10, 3 попытки\n" << "2 -- Числа от 1 до 50, 5 попыток\n" << "3 -- Числа от 1 до 100, 8 попыток\n" << "4 -- Числа от 1 до 1000, 15 попыток\n";
+
+    long num, chislo, i(1);
+    int dif_lvl, rnd_det, last;
+    string sol;
+    cin >> dif_lvl;
+
+    switch (dif_lvl) {
+    case(1):rnd_det = 10; last = 3; break;
+    case(2):rnd_det = 50; last = 5; break;
+    case(3):rnd_det = 100; last = 8; break;
+    case(4):rnd_det = 1000; last = 15; break;
+    }
+
+    srand(time(0));
+    num = rand() % rnd_det + 1;
+    cout << "ЭТО ДЛЯ ТЕСТА " << num << endl;
+    cout << "Я загадала число от 1 до " << rnd_det << " попробуй угадать ";
+    cin >> chislo;
+
+
+    do {
+        i++;
+        if (num != chislo) {
+            if (chislo > rnd_det or chislo < 0) {
+                cout << "Чел ты точно в монитор смотришь? Сказано же от 1 и до " << rnd_det;
+            }
+            cout << "\nВы не угадали число";
+            if (chislo > num) {
+                cout << "\nВаше число больше загаданного ";
+            }
+            else if (chislo < num) { cout << "\nВаше число меньше загаданного "; }
+            cout << "\nПопробуйте ещё раз ";
+            cin >> chislo;
+        }
+        else { break; }
+    } while (i < last);
+
+    if (num != chislo) {
+        cout << "Вы не угадали. Число ,которе я загадала было " << num << "\nПопробуешь еще раз, хе хе хе?)" << "\nда - поробовать еще раз" << "\nнет - закрыть программу   ";
+        cin >> sol;
+        if (sol == "да") {
+            goto returning;
+        }
+        else if (sol == "нет") {
+            return 0;
+        }
+    }
+    else { cout << "\nВы угадали число!!!!!!!!!"; cout << "\nПопробуешь еще раз, хе хе хе?)" << "\nда - поробовать еще раз" << "\nнет - закрыть программу   ";
+        cin >> sol;
+        if (sol == "да") {
+            goto returning;
+        }
+        else if (sol == "нет") {
+            return 0;
+        }
+
+    }
+    
+}

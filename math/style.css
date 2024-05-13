@@ -1,0 +1,40 @@
+
+.body{
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+}
+.header{
+    width: 1920px;
+    height: 180px;
+    background-color: rgb(255, 255, 255);
+    
+}
+.menu-block{
+    width: 1920px;
+    height: 60px;
+    background-color: #DBDBDB;
+}
+.header img{
+    width: 50px;
+    height: 50px;
+}
+.name-block{
+    display: flex;
+}
+.name-block h1{
+    padding-top: 5px;
+}
+.menu-block ul{
+    list-style-type: none;
+}
+.main-content{
+    width: 1920px;
+    height: 400px;
+    background-color: aquamarine;
+}
+.footer-block{
+    width: 1920px;
+    height: 100px;
+    background-color: rgb(96, 158, 158);
+}
