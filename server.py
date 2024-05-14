@@ -31,7 +31,7 @@ def creator():
 
         dict_ = request.form.to_dict()
         user_file = request.files['fileFF']
-        file_url = f'static/img/{user_file.filename}'
+        file_url = f'vs/static/img/{user_file.filename}'
         with open(file_url, 'wb') as new_file:
             new_file.write(user_file.read())
 
@@ -97,4 +97,4 @@ def send_email(to_mail, subject, text, file):
 
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=3000, host='127.0.0.1')
